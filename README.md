@@ -1,10 +1,10 @@
 # M300-Services - Plattformübergreifende Dienste
 ***
 ## Toolumgebung
+***
 Einrichtung einer vollstämdig funktionsfähigen Toolumgebung
 
 ### Voraussetzungen
-
 PC/Notebook mit min. 8 GB freiem RAM, ca. 20 GB freiem HD-Speicher und einer Ethernet-Netzwerkkarte.
 Ein schneller Netzwerk- (Kabel!) und Internet-Anschluss.
 
@@ -34,3 +34,9 @@ Ein schneller Netzwerk- (Kabel!) und Internet-Anschluss.
 2. `$ git add -A .`
 3. `$ git commit -m "Mein Kommentar"`
 4. `$ git push`
+
+### VM
+------
+VMs werden mit Vagrant erstellet. Vagrant ist eine freie Ruby-Anwendung zur Erstellung und Verwaltung virtueller Maschinen und ermöglicht einfache Softwareverteilung.
+
+
