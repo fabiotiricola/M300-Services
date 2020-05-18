@@ -1,7 +1,7 @@
 # M300-Services - Plattformübergreifende Dienste
 
 ## Toolumgebung
-***
+
 Einrichtung einer vollstämdig funktionsfähigen Toolumgebung
 
 ### Voraussetzungen
