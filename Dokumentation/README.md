@@ -128,8 +128,126 @@ Nach einer Änderung muss der Dienst aktualisiert werden. `$ vagrant provision`
 
 ### Packer
 ***
-Linux example
+Mit Packer kann man Images erstellen. Dieses Boxen kann man als Vorlgen für virtuelle Maschienen verwenden.
 
+
+### VMs Test
+***
+1x ubuntu/xenial64
+1X ubuntu/trusty64
+
+|                | ubuntu/xenial64 | ubuntu/trusty64 |
+|----------------|-----------------|-----------------|
+| vagrant status | OK              | OK              |
+| ssh verbindung | OK              | OK              |
+| ip a (network) | OK              | OK              |
+| ifconfig       | OK              | OK              |
+
+### Multiple VM's
+
+### Setup
+Mit vagrant ist es auch möglich, mehrere VMs in einem Projekt zu verwalten. Dazu kann das Vagrantfile so geändert werden, dass mehrere VMs verwaltet werden können. 
+
+```
+Vagrant.configure(2) do |config|
+
+  config.vm.box = "centos/7"
+
+end
+```
+
+### Konfigurieren
+Um zwei VMs in dem Projekt zu konfigurieren, muss die Zeile "config.vm.box" durch folgende Zeile ersetzt werden.
+
+```
+Vagrant.configure(2) do |config|
+
+  config.vm.define "centos7" do |c7|
+    c7.vm.box = "centos/7"
+  end
+
+  config.vm.define "centos6" do | c6|
+    c6.vm.box = "centos/6"
+  end
+
+end
+```
 
 ### UFW Firewall
 ***
+UFW ist eine Firewall. Es ist ein unkompliziertes Kommandozeilen-basiertes Frontend. UFW unterstützt sowohl IPv4 als auch IPv6.
+
+Ausgabe der offenen Ports
+
+    $ netstat -tulpen
+
+Installation
+
+    $ sudo apt-get install ufw
+
+Start / Stop
+
+    $ sudo ufw status
+    $ sudo ufw enable
+    $ sudo ufw disable
+
+Firewall-Regeln
+
+    # Port 80 (HTTP) öffnen für alle
+    vagrant ssh web
+    sudo ufw allow 80/tcp
+    exit
+
+    # Port 22 (SSH) nur für den Host (wo die VM laufen) öffnen
+    vagrant ssh web
+    w
+    sudo ufw allow from [Meine-IP] to any port 22
+    exit
+
+    # Port 3306 (MySQL) nur für den web Server öffnen
+    vagrant ssh database
+    sudo ufw allow from [IP der Web-VM] to any port 3306
+    exit
+
+Zugriff testen
+
+    $ curl -f 192.168.55.101
+    $ curl -f 192.168.55.100:3306
+
+Löschen von Regeln
+
+    $ sudo ufw status numbered
+    $ sudo ufw delete 1
+
+
+sudo ufw status
+
+vagrant@ubuntu-xenial:~$ sudo ufw status
+Status: active
+
+|To    | Action  |    From
+|--    | ------  |    ----
+|80/tcp| ALLOW   |    Anywhere
+|22    | ALLOW   |    192.168.1.112
+|3306  | ALLOW   |    10.0.2.2
+
+### Reverse Proxy
+
+Installation Dazu müssen folgende Module installiert werden:
+
+    $ sudo apt-get install libapache2-mod-proxy-html --> ist schon im apache2-bin enthalten
+    $ sudo apt-get install libxml2-dev
+
+Anschliessend die Module in Apache aktivieren:
+
+    $ sudo a2enmod proxy
+    $ sudo a2enmod proxy_html
+    $ sudo a2enmod proxy_http 
+
+Die Datei /etc/apache2/apache2.conf wie folgt ergänzen:
+
+    ServerName localhost 
+
+Apache-Webserver neu starten:
+
+    $ sudo service apache2 restart

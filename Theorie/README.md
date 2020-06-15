@@ -41,4 +41,49 @@ Cmder ist ähnlih wie das CMD auf allen Windows Betriebssysteme. Man kann die gl
 * Virtuelle Netzwerke
   * Virtuelle Netzwerküberwachung realisieren (ev. Grundfunktionalität Hypervisor oder Zusatzprodukte)
 
+### Repetition
+***
+Cloud Computing
+1. Was versteht man unter Cloud-Computing?
+   * Darunter versteht man die Ausführung von Programmen, die nicht auf dem lokalen Rechner installiert sind, sondern auf einem anderen Rechner, der aus der Ferne aufgerufen wird (bspw. über das Internet).
+
+2. Was versteht man unter Infrastructure as a Service - IaaS?
+Antwort
+   * Die Infrastruktur stellt die unterste Schicht im Cloud Computing dar. Der Benutzer greift hier auf bestehende Dienste innerhalb des Systems zu, verwaltet seine Recheninstanzen (virtuelle Maschinen) allerdings weitestgehend selbst.
+
+Infrastructure as Code
+
+3. Was ist der Unterschied zur manuellen Installation der VM
+   * Automation, Wiederholbarkeit, Dokumentation
+
+Vagrant
+
+4. Was wird mit Vagrant erzeugt?
+   * Virtuelle Maschinen
+
+5. Welche der Aussagen treffen zu:
+
+    a) Vagrant ist ein HyperVisor
+    b) Vagrant erzeugt virtuelle Maschinen, dabei werden mehrere HyperVisor und Cloud Umgebungen (z.B. AWS) unterstützt.
+    c) Vagrant erzeugt Container
+   * b) Vagrant erzeugt virtuelle Maschinen, dabei werden mehrere HyperVisor und Cloud Umgebungen (z.
+
+6. In welchen Bereich des Cloud-Computings ist Vagrant einzuordnen: IaaS, PaaS, SaaS?
+   * IaaS
+
+7. Welche Alternativen zu Vagrant bestehen?
+   * Nanobox 
+
+8. Wo Speichert Vagrant seine Konfiguration?
+Antwort
+   * Vagrantfile
+
+9. as bedeutet die Fehlermeldung "A Vagrant environment or target machine is required to run this command."?
+Antwort
+   * Sie befinden im falschen Verzeichnis, wo keine Vagrantfile vorhanden ist.
+
+10. Bei welcher LPI Zertifizierung nützt mir das Vagrant Wissen?
+Antwort
+    * [DevOps Tools Engineer](https://www.lpi.org/our-certifications/devops-overview) 
+
 
