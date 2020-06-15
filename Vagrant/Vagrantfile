@@ -19,10 +19,10 @@ Vagrant.configure(2) do |config|
       vb.memory = "500"  
     end
     proxy.vm.hostname = "Proxy-Dienst"
-    proxy.vm.network "PN", ip: "192.168.255.5"
+    proxy.vm.network "private_network", ip: "192.168.255.5"
     proxy.vm.synced_folder ".", "/vagrant" 
-    proxy.vm.provision "shell", path: "Scripts/default.sh"
-    proxy.vm.provision "shell", path: "Scripts/proxy.sh"
+    proxy.vm.provision "shell", path: "C:/VMs/default.sh"
+    proxy.vm.provision "shell", path: "C:/VMs/proxy.sh"
   end
   
   # Create a forwarded port mapping which allows access to a specific port
@@ -41,10 +41,9 @@ Vagrant.configure(2) do |config|
       vb.memory = "600"  
     end
     web01.vm.hostname = "Web1"
-    web01.vm.network "PN", ip: "192.168.234.10"
+    web01.vm.network "private_network", ip: "192.168.234.10"
     web01.vm.synced_folder ".", "/vagrant" 
-    web01.vm.provision "shell", path: "Scripts/default.sh"
-    web01.vm.provision "shell", path: "Scripts/web.sh"
+    web01.vm.provision "shell", path: "C:/VMs/default.sh"
   end
   # Database
   config.vm.define "DB" do |db|
@@ -53,10 +52,9 @@ Vagrant.configure(2) do |config|
       vb.memory = "600"  
     end
     db.vm.hostname = "Database"
-    db.vm.network "PN", ip: "192.168.234.15"
+    db.vm.network "private_network", ip: "192.168.234.15"
     db.vm.synced_folder ".", "/vagrant" 
-    db.vm.provision "shell", path: "Scripts/default.sh"
-    db.vm.provision "shell", path: "Scripts/db.sh"
+    db.vm.provision "shell", path: "C:/VMs/default.sh"
   end
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
