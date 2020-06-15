@@ -75,15 +75,12 @@ Vagrant
    * Nanobox 
 
 8. Wo Speichert Vagrant seine Konfiguration?
-Antwort
    * Vagrantfile
 
 9. as bedeutet die Fehlermeldung "A Vagrant environment or target machine is required to run this command."?
-Antwort
    * Sie befinden im falschen Verzeichnis, wo keine Vagrantfile vorhanden ist.
 
 10. Bei welcher LPI Zertifizierung nützt mir das Vagrant Wissen?
-Antwort
     * [DevOps Tools Engineer](https://www.lpi.org/our-certifications/devops-overview) 
 
 

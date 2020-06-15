@@ -251,3 +251,10 @@ Die Datei /etc/apache2/apache2.conf wie folgt ergänzen:
 Apache-Webserver neu starten:
 
     $ sudo service apache2 restart
+
+### Vergleich
+Befor diesem Modul wusste ich bereits über das Tool Virtual Box. Ich hatte bereits in der Vergangenheit mit Virtualbox gearbeitet. Doch ich habe ein neues Programm kennengelern. Vagrant. Vagrant hat im vergleich zu VirtualBox viele vorteile. Man kann alles viel schneller und einfacher erldigen. Das Vorlagen Tool Packer ist auch sehr gut geignet um Zeit zu spaaren. Die meisten Server heutzutage sind ja Unix basierend. Da wir in diesm Modul auch auf Vagrant mit Linux gearbeitet haben, habe ich auch ein grösseres Unix wissen erlangt. Das wird mir in der Zukunft sicherlich von hilfe sein. Nun weiss ich auch viel mehr über GitHub. Früher sah ich immer im Internet die GitHub Seiten, doch konnte nichts mit denen Anfangen. Nun weiss ich viel mehr über GitHub. Und mit der Mark Down Methode kann man vieles leicht Dokumentieren.
+
+### Reflexion
+
+In diesem Modul habe ich ein neues Programm kennengelernt. Vagrant. Mit Vagrant kann man die VMs so viel schneller erstellen, dass ich mich entschieden habe auch in der Zukunft weiter mit Vagrant zu arbeiten. 
