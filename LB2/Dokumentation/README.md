@@ -133,8 +133,8 @@ Mit Packer kann man Images erstellen. Dieses Boxen kann man als Vorlgen für vir
 
 ### VMs Test
 ***
-1x ubuntu/xenial64
-1X ubuntu/trusty64
+ubuntu/xenial64
+ubuntu/trusty64
 
 |                | ubuntu/xenial64 | ubuntu/trusty64 |
 |----------------|-----------------|-----------------|
@@ -229,7 +229,7 @@ Status: active
 |--    | ------  |    ----
 |80/tcp| ALLOW   |    Anywhere
 |22    | ALLOW   |    192.168.1.112
-|3306  | ALLOW   |    10.0.2.2
+
 
 ### Reverse Proxy
 
