@@ -46,5 +46,37 @@ Weitere Commands
 
 `docker inspect`
 
+### Dockerfile
+
+Ein Dockerfile ist eine Textdatei mit einer Reihe von Schritten, die genutzt werden können, um ein Docker-Image zu erzeugen.
+
+Dazu wird zuerst ein Verzeichnis erstellt und darin eine Datei mit Namen "Dockerfile".
+
+### Jenkins
+
+Vom Hub herunterladen
+`docker pull jenkins`
+
+
+Docker erstellen. Jenkins ist nun auf Port 8080:8080 ereichbar.
+`docker run -p 8080:8080 -p 50000:50000 -v /your/home:/var/jenkins_home jenkins`
+
+Hier bekommt man auch einen Key, den man wie folgt einsetzen muss.
+
+Nun im Browser via Localhost:8080 auf denJenkins connecten.
+
+Danach müssen eine Einstellunge bearbeitet werde. 
+
+Im Jenkinskann man nur unter User einstellungen einbesseren Passwort setzen.
+
+Nun kann man in Jenkis Jobs erstellen.
+
+### Test
+
+docker volume ls - OK - Volume myJenkins bereit
+
+docker ps - OK Docker ist am laufen
+
+### Sicherheit
 
 
