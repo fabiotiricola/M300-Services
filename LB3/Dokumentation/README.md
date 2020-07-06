@@ -79,4 +79,35 @@ docker ps - OK Docker ist am laufen
 
 ### Sicherheit
 
+Zu den wichtigsten Dingen, um einen Container abzusichern, gehören
 
+Die Container laufen in einer VM oder auf einem dedizierten Host, um zu vermeiden, dass andere Benutzer oder Services angegriffen werden können.
+
+Der Load Balancer / Reverse-Proxy ist der einzige Container, der einen Port nach aussen freigibt, wodurch viel Angriffsfläche verschwindet. Monitoring oder Logging-Services sollten über private Schnittstellen oder VPN nutzbar sein.
+
+Alle Images definieren einen Benutzer und laufen nicht als root.
+
+Alle Images werden über den eigenen Hash heruntergeladen oder auf anderem Wege sicher erhalten und verifiziert.
+
+Die Anwendung wird überwacht und es wird Alarm ausgelöst, wenn eine ungewöhnliche Netzwerklast oder auffällige Zugriffsmuster erkannt werden.
+
+Alle Container laufen mit aktueller Software und im Produktivmodus – Debug-Informationen sind abgeschaltet.
+
+AppArmor oder SELinux sind auf dem Host aktiviert
+
+Services wie z.B. Apache, Mysql ist mir irgendeiner Form der Zugriffskontrolle oder einem Passwortschutz ausgestattet.
+
+### Jenkinsci/blueocean
+Von Hub herunterladen 
+`docker pull jenkinsci/blueocean`
+
+Container erstellen
+`docker run -p 8080:8080 jenkinsci/blueocean`
+
+Nun can via localhost auf den Service zugegriffen werden.
+
+
+
+## Reflexion
+
+Ich hatte mit Docker viel mehr Schwierigkeiten als mit Vagrant. Schon am Anfang musste ich mit den Installationen kämpfen. Ich konnte Docker nicht auf meinem Noetebook installieren. Es meinte ichhätte nicht die richtige Win 10 version. Ale Updates hatte ich auf der Maschine schon gamacht. Ich versuchte auch eine älter Version von Docker herunterzu laden. Doch dies brachte auch nicht. Danach wechselte ich auf mein PC um dort konnte ich Docker installieren. Doch auch auf meinemPC musste ich einige Einstellungen, auchim BIOS, anpassen. Dies kostete viel Zeit doch am schluss konnte ich auf meinen PC Docker Benutzen. Nun musste ich die ganze GitHub und Vagrant Infrastruktur auch auf meinem PC ainstallieren. Danach arbeiete ich mit Jenkins auf den Docker Containern.
